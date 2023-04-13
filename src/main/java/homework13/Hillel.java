@@ -25,13 +25,10 @@ public class Hillel {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript("arguments[0].scrollIntoView(true);", lazySectionCoaches);
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
-        WebElement myElement = wait.until(ExpectedConditions.elementToBeClickable(By.id("coachesSection")));
-
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         WebElement button= driver.findElement(By.cssSelector("#coachesShowAllButton"));
         button.click();
-
         List<WebElement> coachesList = driver.findElements(By.className("coach-card_name"));
 
         System.out.println("Імена викладачів на курсі Front-End Basic:");
