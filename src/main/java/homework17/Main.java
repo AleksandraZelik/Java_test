@@ -4,7 +4,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static homework17.User.*;
+
+import static homework17.UserProvider.*;
 
 public class Main {
     public static void main(String[] args) {
