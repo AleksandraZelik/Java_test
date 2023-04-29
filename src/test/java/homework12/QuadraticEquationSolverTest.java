@@ -9,23 +9,23 @@ public class QuadraticEquationSolverTest {
     public void testTwoRealRoots() {
         QuadraticEquationSolver solver = new QuadraticEquationSolver(1, -5, 6);
         double[] roots = solver.solve();
-        Assertions.assertEquals(2, roots.length);
-        Assertions.assertEquals(3.0, roots[0]);
-        Assertions.assertEquals(2.0, roots[1]);
+        double[] expectedRoots = new double[]{3.0,2.0};
+        Assertions.assertArrayEquals(expectedRoots, roots);
     }
 
     @Test
     public void testOneRealRoot() {
         QuadraticEquationSolver solver = new QuadraticEquationSolver(1, -4, 4);
         double[] roots = solver.solve();
-        Assertions.assertEquals(1, roots.length);
-        Assertions.assertEquals(2.0, roots[0]);
+        double[] expectedRoots = new double[]{2.0};
+        Assertions.assertArrayEquals(expectedRoots, roots);
     }
 
     @Test
     public void testNoRealRoots() {
         QuadraticEquationSolver solver = new QuadraticEquationSolver(1, 2, 3);
         double[] roots = solver.solve();
-        Assertions.assertEquals(0, roots.length);
+        double[] expectedRoots = new double[]{};
+        Assertions.assertArrayEquals(expectedRoots, roots);
     }
 }

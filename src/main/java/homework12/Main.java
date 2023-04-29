@@ -15,14 +15,15 @@ public class Main {
         QuadraticEquationSolver solver = new QuadraticEquationSolver(a,b,c);
         double[] roots = solver.solve();
 
-        System.out.println("Рівняння " + solver + " має корені:");
-
         if (roots.length == 0) {
-            System.out.println("Корені відсутні");
-        } else {
-            for (int i = 0; i < roots.length; i++) {
-                System.out.println("x" + (i + 1) + " = " + roots[i]);
-            }
+            System.out.println("Рівняння "+ a + "x^2 +" + b + "x +" + c + " = 0 не має коренів");
+        } else if (roots.length == 1) {
+            System.out.println("Рівняння "+ a + "x^2 +" + b + "x +" + c + " = 0 має корінь:");
+            System.out.println("x="+roots[0]);
+        } else if (roots.length == 2) {
+            System.out.println("Рівняння "+ a + "x^2 +" + b + "x +" + c + " = 0 має корені:");
+            System.out.println("x1="+roots[0]);
+            System.out.println("x2="+roots[1]);
         }
     }
 }

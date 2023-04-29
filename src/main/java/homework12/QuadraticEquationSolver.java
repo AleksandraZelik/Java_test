@@ -24,7 +24,4 @@ package homework12;
             }
             return roots;
         }
-        public String toString() {
-            return a + "x^2 + " + b + "x + " + c + " = 0";
-        }
     }
